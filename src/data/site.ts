@@ -23,7 +23,7 @@ export const NAV = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Roster", href: "#roster" },
-  { label: "Story", href: "#story" },
+  { label: "Our Story", href: "#story" },
   { label: "Résumé", href: "#resume" },
   { label: "Contact", href: "#contact" },
 ];
