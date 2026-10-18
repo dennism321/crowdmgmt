@@ -112,11 +112,7 @@ export default function Footer() {
             className="group inline-flex items-center gap-1.5 self-start tracking-wide transition-colors hover:text-white md:self-auto md:justify-self-center"
           >
             Powered by
-            <span
-              aria-hidden
-              className="h-[18px] w-[18px] bg-current transition-colors group-hover:bg-brand-gradient"
-              style={{ mask: `url("${helmet}") center / contain no-repeat`, WebkitMask: `url("${helmet}") center / contain no-repeat` }}
-            />
+            <img src={helmet} alt="" width={18} height={18} className="h-[18px] w-[18px] object-contain" />
             <span className="font-semibold text-white/55 transition-colors group-hover:text-white">TechAthos</span>
           </a>
           <p className="font-semibold tracking-wide text-white/55 md:justify-self-end">{SITE.hashtag}</p>
