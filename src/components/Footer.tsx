@@ -1,5 +1,6 @@
 import { ArrowUpRight, Mail } from "lucide-react";
 import { NAV, SERVICES, SITE } from "@/data/site";
+import helmet from "@/assets/techathos-helmet.svg";
 import { mailtoHref, scrollToId } from "@/lib/forms";
 import { Dot, InstagramIcon, Logo, Reveal } from "./ui";
 
@@ -97,14 +98,28 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 border-t border-white/[0.07] py-8 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-4 border-t border-white/[0.07] py-8 text-xs text-white/40 md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-8">
           <p>
             © {year} crowd MGMT®. All rights reserved. For Photo Credits: Send to{" "}
             <a href={mailtoHref("Photo Credit Submission Request")} className="text-white/65 underline-offset-2 hover:text-white hover:underline">
               {SITE.email}
             </a>
           </p>
-          <p className="font-semibold tracking-wide text-white/55">{SITE.hashtag}</p>
+          <a
+            href="https://techathos.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-1.5 self-start tracking-wide transition-colors hover:text-white md:self-auto md:justify-self-center"
+          >
+            Powered by
+            <span
+              aria-hidden
+              className="h-[18px] w-[18px] bg-current transition-colors group-hover:bg-brand-gradient"
+              style={{ mask: `url("${helmet}") center / contain no-repeat`, WebkitMask: `url("${helmet}") center / contain no-repeat` }}
+            />
+            <span className="font-semibold text-white/55 transition-colors group-hover:text-white">TechAthos</span>
+          </a>
+          <p className="font-semibold tracking-wide text-white/55 md:justify-self-end">{SITE.hashtag}</p>
         </div>
       </div>
 
