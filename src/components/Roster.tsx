@@ -84,7 +84,7 @@ export default function Roster() {
                     <div className="mt-4 flex items-center gap-2 transition duration-500 sm:translate-y-3 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100 sm:group-focus-within:translate-y-0 sm:group-focus-within:opacity-100">
                       <button
                         onClick={() => openContactForm("booking", a.name)}
-                        className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-xs font-semibold text-ink-950 transition hover:bg-coral-500 hover:text-white"
+                        className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-3 text-xs font-semibold text-ink-950 transition sm:py-2 hover:bg-coral-500 hover:text-white"
                       >
                         <CalendarCheck className="h-3.5 w-3.5" /> Book {a.name.split(" ")[0]}
                       </button>
@@ -94,7 +94,7 @@ export default function Roster() {
                           target="_blank"
                           rel="noreferrer"
                           aria-label={`${a.name} on Instagram`}
-                          className="grid h-8 w-8 place-items-center rounded-full border border-white/20 text-white/80 transition hover:bg-white/10"
+                          className="grid h-11 w-11 place-items-center rounded-full border border-white/20 sm:h-8 sm:w-8 text-white/80 transition hover:bg-white/10"
                         >
                           <InstagramIcon className="h-3.5 w-3.5" />
                         </a>

@@ -10,14 +10,14 @@ export default function Footer() {
       <div className="pointer-events-none absolute left-1/2 top-0 h-80 w-[60rem] -translate-x-1/2 rounded-full bg-coral-500/10 blur-[120px]" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal className="flex flex-col items-start justify-between gap-10 border-b border-white/[0.07] pb-16 lg:flex-row lg:items-end">
-          <div>
+          <div className="min-w-0 max-w-full">
             <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-white/40">Ready when you are</p>
             <h2 className="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.02] tracking-tight sm:text-6xl">
               Ready to stand out <span className="font-serif font-normal italic text-gradient">in a crowd?</span>
             </h2>
-            <a href={mailtoHref("Hello, crowdMGMT (from your website)")} className="group mt-8 inline-flex items-center gap-3 font-display text-xl font-semibold text-white/85 transition hover:text-white sm:text-2xl">
+            <a href={mailtoHref("Hello, crowdMGMT (from your website)")} className="group mt-8 inline-flex max-w-full items-center gap-3 font-display text-lg font-semibold text-white/85 transition hover:text-white sm:text-2xl">
               <Mail className="h-6 w-6 text-coral-400" />
-              <span className="bg-gradient-to-r from-coral-400 to-iris-400 bg-[length:0%_2px] bg-left-bottom bg-no-repeat pb-1 transition-all duration-500 group-hover:bg-[length:100%_2px]">{SITE.email}</span>
+              <span className="min-w-0 break-all bg-gradient-to-r from-coral-400 to-iris-400 bg-[length:0%_2px] bg-left-bottom bg-no-repeat pb-1 transition-all duration-500 group-hover:bg-[length:100%_2px]">{SITE.email}</span>
             </a>
           </div>
           <button onClick={() => scrollToId("contact")} className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-semibold text-ink-950 transition hover:bg-coral-500 hover:text-white">

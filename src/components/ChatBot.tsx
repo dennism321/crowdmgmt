@@ -69,6 +69,18 @@ export default function ChatBot() {
     return () => window.clearTimeout(id);
   }, []);
 
+  // On phones the teaser sits over page content, so let it get out of the way
+  useEffect(() => {
+    if (!teaser || window.innerWidth >= 640) return;
+    const hide = () => setTeaser(false);
+    const id = window.setTimeout(hide, 8000);
+    window.addEventListener("scroll", hide, { passive: true, once: true });
+    return () => {
+      window.clearTimeout(id);
+      window.removeEventListener("scroll", hide);
+    };
+  }, [teaser]);
+
   useEffect(() => {
     if (!open) return;
     setTeaser(false);
@@ -126,9 +138,9 @@ export default function ChatBot() {
             initial={{ opacity: 0, y: 10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
-            className="fixed bottom-[6.25rem] right-4 z-[65] max-w-[17rem] rounded-2xl rounded-br-md border border-white/10 bg-white p-4 pr-9 text-sm text-ink-950 shadow-2xl sm:right-6"
+            className="fixed bottom-[6.25rem] right-4 z-[65] max-w-[17rem] rounded-2xl rounded-br-md border border-white/10 bg-white p-4 pr-11 text-sm text-ink-950 shadow-2xl sm:right-6"
           >
-            <button onClick={() => setTeaser(false)} className="absolute right-2.5 top-2.5 text-ink-950/40 hover:text-ink-950" aria-label="Dismiss">
+            <button onClick={() => setTeaser(false)} className="absolute right-0.5 top-0.5 grid h-10 w-10 place-items-center text-ink-950/40 hover:text-ink-950" aria-label="Dismiss">
               <X className="h-4 w-4" />
             </button>
             <button onClick={() => setOpen(true)} className="text-left">

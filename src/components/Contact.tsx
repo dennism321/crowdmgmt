@@ -128,8 +128,8 @@ export default function Contact() {
     <section id="contact" className="relative py-24 sm:py-32">
       <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-[40rem] bg-[radial-gradient(ellipse_at_bottom,rgba(124,92,255,0.14),transparent_60%)]" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
+          <div className="min-w-0">
             <SectionHeading
               eyebrow="Contact"
               title="Let’s make you"
@@ -172,17 +172,17 @@ export default function Contact() {
             <Reveal delay={0.15} className="mt-8">
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/40">Prefer email? Quick links</p>
               <div className="mt-3 flex flex-wrap gap-2">
-                <a href={mailtoHref(FORM_SUBJECTS.booking)} className="rounded-full border border-white/15 px-4 py-2 text-xs font-semibold transition hover:bg-white/10">Book an Artist</a>
-                <a href={mailtoHref(FORM_SUBJECTS.contact)} className="rounded-full border border-white/15 px-4 py-2 text-xs font-semibold transition hover:bg-white/10">Contact</a>
-                <a href={PORTFOLIO_GOOGLE_FORM} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full border border-white/15 px-4 py-2 text-xs font-semibold transition hover:bg-white/10">
+                <a href={mailtoHref(FORM_SUBJECTS.booking)} className="rounded-full border border-white/15 px-4 py-3 text-xs sm:py-2 font-semibold transition hover:bg-white/10">Book an Artist</a>
+                <a href={mailtoHref(FORM_SUBJECTS.contact)} className="rounded-full border border-white/15 px-4 py-3 text-xs sm:py-2 font-semibold transition hover:bg-white/10">Contact</a>
+                <a href={PORTFOLIO_GOOGLE_FORM} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full border border-white/15 px-4 py-3 text-xs sm:py-2 font-semibold transition hover:bg-white/10">
                   Portfolio Submission <ExternalLink className="h-3 w-3" />
                 </a>
-                <a href={mailtoHref(FORM_SUBJECTS.careers)} className="rounded-full border border-white/15 px-4 py-2 text-xs font-semibold transition hover:bg-white/10">APPLY NOW</a>
+                <a href={mailtoHref(FORM_SUBJECTS.careers)} className="rounded-full border border-white/15 px-4 py-3 text-xs sm:py-2 font-semibold transition hover:bg-white/10">APPLY NOW</a>
               </div>
             </Reveal>
           </div>
 
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} className="min-w-0">
             <div className="rounded-[2rem] border border-white/10 bg-ink-900/80 p-2 shadow-[0_40px_120px_-40px_rgba(0,0,0,0.9)] backdrop-blur">
               <div className="no-scrollbar flex gap-1 overflow-x-auto rounded-[1.6rem] bg-ink-950/70 p-1.5" role="tablist" aria-label="Contact forms">
                 {TABS.map(({ id, label, icon: Icon }) => (
